@@ -44,9 +44,10 @@ This repository uses the following directory structure:
         ├── Red Hat
         ├── write-good 
     ├── workflow
-        ├── adocs-build.yml
-        ├── preview.yml
-        ├── reviewvale.yml
+        ├── adocs-build.yml (convert to AsciiDoc)
+        ├── jekyll-gh-pages.yml (push GitHub Pages site with Jekyll)
+        ├── preview.yml (generate previews from commits)
+        ├── reviewvale.yml (push to Vale adding Red Hat and write-good Vale styles)
 ```
 
 ## Code of conduct
