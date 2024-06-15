@@ -1,6 +1,3 @@
----
-// layout: default
----
 
 Migration Toolkit for Applications
 
