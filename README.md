@@ -39,12 +39,18 @@ This repository uses the following directory structure:
             │   ├── document-attributes.adoc (Stores attributes used across guides)
             │   ├── revision-info.adoc (Revision timestamp to be added to all guides)
             └── *.adoc (AsciiDoc files used across guides)
+├── .github (actions)
+    ├── styles (styles for Vale)
+        ├── Red Hat
+        ├── write-good 
+    ├── workflow
+        ├── adocs-build.yml
+        ├── preview.yml
+        ├── reviewvale.yml
 ```
 
 ## Code of conduct
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-## PR preview rendering
 
-[![](https://www.netlify.com/img/global/badges/netlify-light.svg)](https://www.netlify.com)
