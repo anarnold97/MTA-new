@@ -2,49 +2,30 @@ name: Deploy-PR-Previews
 
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - closed
   push:
-    branches: ["main"]    
+    branches:
+      - main
 
-concurrency: preview-${{ github.ref }}
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# contents: write is required for deploying the GitHub Pages if using the default GITHUB_TOKEN
+# pull-requests: write is required if you want to comment the preview page url to the pull request
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  pull-requests: write
+  contents: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-# concurrency:
-#  group: "pages"
-#  cancel-in-progress: false
-
+# recommended to set a concurrency group
+concurrency:
+  group: preview-pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  deploy-preview:
-    runs-on: ubuntu-20.04
+  run:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install and Build
-        if: github.event.action != 'closed' 
-        run: |
-          npm install
-          npm run build
+      # run some build steps here and export the result to a directory
 
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1
+      - name: Preview Pages
+        uses: rajyan/preview-pages@v1
         with:
-          source-dir: ./build/
-
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+          source-dir: test
