@@ -1,26 +1,48 @@
 name: Build-Adocs
 
+# on:
+#  push:
+#    branches:
+#    - main
+# jobs:
+#  adoc_build:
+#    runs-on: ubuntu-18.04
+#    name: asciidoctor -D docs --backend=html5 -o index.html -a toc2 ../index.md 
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v2
+#    - name: Get build container
+#      id: adocbuild
+#      uses: tonynv/asciidoctor-action@master
+#      with:
+#          program: "asciidoctor -D docs --backend=html5 -o index.html ../index.md"
+#    - name: Print execution time
+#      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+#    - name: Deploy docs to ghpages
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+#        publish_branch: gh-pages
+#        publish_dir: ./
+
+
 on:
   push:
     branches:
-    - main
+      - main
+
 jobs:
-  adoc_build:
-    runs-on: ubuntu-18.04
-    name: asciidoctor -D docs --backend=html5 -o index.html -a toc2 ../index.md 
+  example:
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Get build container
-      id: adocbuild
-      uses: tonynv/asciidoctor-action@master
-      with:
-          program: "asciidoctor -D docs --backend=html5 -o index.html ../index.md"
-    - name: Print execution time
-      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-    - name: Deploy docs to ghpages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: gh-pages
-        publish_dir: ./
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - uses: reitzig/actions-asciidoctor@v2.0.2
+        with:
+          version: 2.0.18
+
+      - run: asciidoctor --version        
