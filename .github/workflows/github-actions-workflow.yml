@@ -1,0 +1,23 @@
+//GitHub actions
+
+name: github-actions-workflow
+
+on: [push]
+
+  jobs:
+
+    GitHub-Workflow
+
+      runs-on: ubuntu-latest
+
+      steps:
+
+        ReviewVale
+
+        Build-Adocs
+
+        Deploy-PR-previews
+
+        Deploy-Jekyll-with-GitHub-Pages-dependencies-preinstalled
+
+          - uses: actions/checkout@v4

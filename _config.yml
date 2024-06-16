@@ -1,11 +1,11 @@
 # Site settings
 show_downloads: false
-title: Windup Documentation
+title: MTA Documentation
 permalink: pretty
-repository: windup/windup-documentation
+repository: anarnold97/MTA-new
 baseurl: /
-url: https://windup.github.io/windup-documentation
-repository_url: https://github.com/windup/windup-documentation
+url: https://anarnold97.github.io/MTA-new/
+repository_url: https://github.com/anarnold97/MTA-new
 
 type: website
 future: false
