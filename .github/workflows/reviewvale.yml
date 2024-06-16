@@ -1,4 +1,4 @@
-name: reviewvale
+name: ReviewVale
 on: [pull_request]
 
 jobs:
