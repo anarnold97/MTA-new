@@ -18,14 +18,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  run:
+  deploy-preview:
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # run some build steps here and export the result to a directory
+      - name: Install and Build
+        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
+        run: |
+          npm install
+          npm run build
 
-      - name: Preview Pages
-        uses: rajyan/preview-pages@v1
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: test
+          source-dir: ./build/
