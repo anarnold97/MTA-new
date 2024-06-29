@@ -16,7 +16,7 @@ See the [Contributors Guide](CONTRIBUTING.adoc) for details.
 
 ## Reporting a documentation bug
 
-To report an MTA documentation issue, submit a Jira issue on the [Windup project page]]{JiraWindupURL} with the *Component* field set to *Documentation*.
+To report an MTA documentation issue, submit a Jira issue on the [MTA project page](https://issues.redhat.com/projects/MTA/issues) with the *Component* field set to *Documentation*.
 
 ## Repository Structure
 
