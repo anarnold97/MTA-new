@@ -1,13 +1,13 @@
 
 # MTA Documentation
 
-This repository contains the files for Windup documentation.
+This repository contains the files for MTA documentation.
 
 [Windup](https://github.com/windup/windup) is an automated application migration and assessment tool.
 
 For developer-focused documentation, see the [Windup wiki](https://github.com/windup/windup/wiki).
 
-## Contributing to Windup documentation
+## Contributing to MTA documentation
 
 This project is [Apache 2.0 licensed](LICENSE) and accepts contributions via
 GitHub pull requests.
