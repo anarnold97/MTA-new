@@ -1,13 +1,12 @@
 
-# Windup Documentation
+# MTA Documentation
 
-This repository contains the files for Windup documentation.
+This repository contains the files for MTA documentation.
 
-[Windup](https://github.com/windup/windup) is an automated application migration and assessment tool.
 
-For developer-focused documentation, see the [Windup wiki](https://github.com/windup/windup/wiki).
+For developer-focused documentation, see the [MTA wiki](https://developers.redhat.com/products/mta/overview).
 
-## Contributing to Windup documentation
+## Contributing to MTA documentation
 
 This project is [Apache 2.0 licensed](LICENSE) and accepts contributions via
 GitHub pull requests.
@@ -16,7 +15,7 @@ See the [Contributors Guide](CONTRIBUTING.adoc) for details.
 
 ## Reporting a documentation bug
 
-To report a Windup documentation issue, submit a Jira issue on the [Windup project page]]{JiraWindupURL} with the *Component* field set to *Documentation*.
+To report an MTA documentation issue, submit a Jira issue on the [MTA project page](https://issues.redhat.com/projects/MTA/issues) with the *Component* field set to *Documentation*.
 
 ## Repository Structure
 
